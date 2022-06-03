@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="pages/index.css"> -->
+  <title>Mesta</title>
+</head>
+
+<body class="page">
+  <header class="header page__header">
+
+    <picture>
+      <source media="(min-width: 1280px)" srcset="<%=require('../images/svg/logo.svg')%>">
+      <source media="(max-width: 320px)" srcset="<%=require('../images/svg/logo320.svg')%>">
+      <img class="header__logo" src="<%=require('../images/svg/logo.svg')%>" alt="Место">
+
+    </picture>
+
+
+  </header>
+  <main class="main">
+    <section class="profile page__profile">
+      <img class="profile__image" src="<%=require('../images/1280/kusto-1280.jpg')%>" alt="Жак-Ив Кусто">
+
+      <div class="profile__text-wrapper">
+        <h1 class="profile__title">Жак-Ив Кусто</h1>
+        <p class="profile__sub-title">Исследователь океана</p>
+        <button class="profile__edit-btn" type="button" aria-label="редактировать профиль"></button>
+      </div>
+
+      <button class="profile__btn"  type="button"></button>
+    </section>
+    <section class="gallery page__gallery" aria-label="Галерея фотографий">
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copyright">© 2020 Mesto Russia</p>
+  </footer>
+  <div class="popup popup_prifile">
+    <div class="popup__container popup__container_width">
+      <form class="popup__form popup__form-profile" action="#" name="form-popup" novalidate>
+        <h2 class="popup__title">Редактировать профиль</h2>
+
+        <input id="popup__name-profile" class="popup__input popup__input_name_js" type="text" name="name" value="" minlength="2" maxlength="40" required>
+        <span class="popup__name-profile-error popup__input-error">поле необходимо заполнить</span>
+
+        <input id="popup__profession" class="popup__input popup__input_profession_js" type="text" name="profession" value="" minlength="2" maxlength="200" required>
+        <span class="popup__profession-error popup__input-error">поле необходимо заполнить</span>
+
+        <button class="popup__button" name="btnSubmith" type="submit">Сохранить</button>
+      </form>
+      <button class="popup__close" type="button" aria-label="закрыть popup"></button>
+    </div>
+  </div>
+
+  <div class="popup popup_add-image">
+    <div class="popup__container popup__container_width">
+      <form class="popup__form popup__form-image" action="#" name="form-popup" novalidate>
+        <h2 class="popup__title">Новое место</h2>
+
+        <input id="popup__name-image" class="popup__input popup__input_name_js" type="text" name="name" value="" placeholder="Название" minlength="2" maxlength="30" required>
+        <span class="popup__name-image-error popup__input-error">поле необходимо заполнить</span>
+
+        <input id="popup__link-image" class="popup__input popup__input_link_js" type="url" name="link" value=""
+          placeholder="Ссылка на картинку" required>
+        <span class="popup__link-image-error popup__input-error">поле необходимо заполнить</span>
+
+        <button name="btnSubmith" class="popup__button" type="submit">Сохронить</button>
+      </form>
+      <button class="popup__close popup__close-add-image" type="button" aria-label="закрыть popup"></button>
+    </div>
+  </div>
+
+  <div class="popup popup_bg">
+    <div class="popup__container">
+      <img class="popup__img" src="." alt="">
+      <h2 class="popup__name">.</h2>
+      <button class="popup__close popup__close-image" type="button" aria-label="закрыть popup"></button>
+    </div>
+  </div>
+
+  <template id="gallery__item">
+    <div class="gallery__item">
+      <img class="gallery__img" src="." alt=".">
+      <img class="gallery__trash" src="<%=require('../images/svg/Trash.svg')%>" alt="удалить">
+      <div class="gallery__text-wrapper">
+        <h2 class="gallery__text"></h2>
+        <button class="gallery__like" type="button" aria-label="поставить лайк"></button>
+      </div>
+    </div>
+  </template>
+  <!-- <script src="./scripts/pages/index.js" type="module"></script> -->
+</body>
+
+</html>
