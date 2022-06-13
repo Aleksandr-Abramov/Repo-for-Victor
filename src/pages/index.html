@@ -23,7 +23,10 @@
   </header>
   <main class="main">
     <section class="profile page__profile">
-      <img class="profile__image" src="<%=require('../images/1280/kusto-1280.jpg')%>" alt="Жак-Ив Кусто">
+      <div class="profile__image-container">
+        <img class="profile__image" src="<%=require('../images/1280/kusto-1280.jpg')%>" alt="Жак-Ив Кусто">
+      </div>
+
 
       <div class="profile__text-wrapper">
         <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -69,7 +72,7 @@
           placeholder="Ссылка на картинку" required>
         <span class="popup__link-image-error popup__input-error">поле необходимо заполнить</span>
 
-        <button name="btnSubmith" class="popup__button" type="submit">Сохронить</button>
+        <button name="btnSubmith" class="popup__button" type="submit">Создать</button>
       </form>
       <button class="popup__close popup__close-add-image" type="button" aria-label="закрыть popup"></button>
     </div>
@@ -83,13 +86,41 @@
     </div>
   </div>
 
+  <div class="popup popup_delete">
+    <div class="popup__container popup__container_width">
+      <form class="popup__form popup__form_height" action="#" name="form-popup" novalidate>
+        <h2 class="popup__title popup__title_margin">Новое место</h2>
+        <button name="btnSubmith" class="popup__button" type="submit">Да</button>
+      </form>
+      <button class="popup__close popup__close-image" type="button" aria-label="закрыть popup"></button>
+    </div>
+  </div>
+
+  <div class="popup avatar-popup">
+    <div class="popup__container popup__container_width">
+      <form class="popup__form popup__form_height" action="#" name="form-popup" novalidate>
+        <h2 class="popup__title">Обновить аватар</h2>
+
+        <input id="popup__link-image" class="popup__input popup__input_link_js" type="url" name="link" value=""
+          placeholder="Ссылка на картинку" required>
+        <span class="popup__link-image-error popup__input-error popup_input-error-margin">поле необходимо заполнить</span>
+
+        <button name="btnSubmith" class="popup__button" type="submit">Сохранить</button>
+      </form>
+      <button class="popup__close popup__close-add-image" type="button" aria-label="закрыть popup"></button>
+    </div>
+  </div>
+
   <template id="gallery__item">
     <div class="gallery__item">
       <img class="gallery__img" src="." alt=".">
       <img class="gallery__trash" src="<%=require('../images/svg/Trash.svg')%>" alt="удалить">
       <div class="gallery__text-wrapper">
         <h2 class="gallery__text"></h2>
-        <button class="gallery__like" type="button" aria-label="поставить лайк"></button>
+        <div class="gallery__like-container">
+          <button class="gallery__like" type="button" aria-label="поставить лайк"></button>
+          <span class="gallery__like-text">1</span>
+        </div>
       </div>
     </div>
   </template>
